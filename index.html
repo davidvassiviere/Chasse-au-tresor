@@ -73,7 +73,7 @@
     }
 
     .warning {
-      margin-top: 30px;
+      margin-top: 15px;
       font-weight: bold;
       color: #c0392b;
       text-align: center;
@@ -85,6 +85,7 @@
       text-align: center;
       font-size: 1.2em;
       font-weight: bold;
+      margin-top: 20px;
     }
 
     @media screen and (max-width: 600px) {
@@ -109,10 +110,10 @@
 
   <h2>👕 Vêtements</h2>
   <ul>
-    <li><input type="checkbox"> Affaire chaude pour le soir</li>
-    <li><input type="checkbox"> Sous-vêtement de rechange</li>
+    <li><input type="checkbox"> Affaires chaudes pour le soir</li>
+    <li><input type="checkbox"> Sous-vêtements de rechange</li>
     <li><input type="checkbox"> Pyjama</li>
-    <li><input type="checkbox"> Birk ou claquette</li>
+    <li><input type="checkbox"> Birk ou claquettes</li>
   </ul>
 
   <h2>🧴 Toilettes</h2>
@@ -126,7 +127,7 @@
 
   <h2>🎒 Divers</h2>
   <ul>
-    <li><input type="checkbox"> Eau + encas</li>
+    <li><input type="checkbox"> Eau + Encas</li>
     <li><input type="checkbox"> Machette</li>
     <li><input type="checkbox"> Frontale</li>
     <li><input type="checkbox"> Batterie externe</li>
@@ -136,16 +137,23 @@
     <li><input type="checkbox"> Boussole</li>
   </ul>
 
-  <!-- Message secret avec lien Google Maps -->
-  <div id="finalMessage" class="parchment">
-    <a href="https://www.google.com/maps/search/?api=1&query=-21.234040,55.499961" target="_blank" style="color: #c0392b; text-decoration: none; font-weight: bold;">
-      -21.234040, 55.499961
-    </a>
+  <!-- Phrase finale / conseils -->
+  <div class="parchment intro">
+    Avant de partir, je vous conseille de vous équiper d’une tenue de rando et de bonnes chaussures.<br>
+    Si vous jugez nécessaire d’emmener autre chose indispensable pour éventuellement passer une nuit dans la jungle, n’hésitez pas. Seulement, ne vous encombrez pas trop.<br>
+    Pour ce qui est matelas ou couverture, je vous montrerai comment faire avec du bois et des feuilles.
   </div>
 
   <!-- Avertissement permanent -->
   <div class="warning">
     ⚠️ N’OUBLIEZ RIEN OU VOUS NE POURREZ PAS CONTINUER
+  </div>
+
+  <!-- Message secret / coordonnées Google Maps -->
+  <div id="finalMessage" class="parchment">
+    <a href="https://www.google.com/maps/search/?api=1&query=-21.234040,55.499961" target="_blank" style="color: #c0392b; text-decoration: none; font-weight: bold;">
+      -21.234040, 55.499961
+    </a>
   </div>
 
   <script>
