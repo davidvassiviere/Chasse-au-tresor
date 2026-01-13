@@ -1,201 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Préparatifs pour l’expédition</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Préparatifs pour l’expédition</title>
+
+<style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #f3ead2;
-      color: #2f2f2f;
-      margin: 0;
-      padding: 20px;
+        font-family: Arial, sans-serif;
+        background: #f4f1ec;
+        padding: 20px;
+    }
+
+    .parchemin {
+        background: #fffaf0;
+        border: 3px solid #c2a86d;
+        border-radius: 12px;
+        padding: 20px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     h1 {
-      text-align: center;
-      font-size: 1.9em;
-      margin-bottom: 20px;
-      color: #3a2e1f;
-    }
-
-    .parchment {
-      background: #fff6dc;
-      border: 2px solid #b89b6a;
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow:
-        inset 0 0 20px rgba(184,155,106,0.3),
-        0 6px 12px rgba(0,0,0,0.15);
-      margin-bottom: 25px;
-    }
-
-    .intro {
-      font-size: 1.05em;
-      line-height: 1.5em;
-      font-style: italic;
+        text-align: center;
+        margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 1.3em;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #4a3b2a;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+        margin-top: 20px;
     }
 
     ul {
-      list-style: none;
-      padding: 0;
+        list-style: none;
+        padding-left: 0;
     }
 
     li {
-      display: flex;
-      align-items: center;
-      font-size: 1.15em;
-      margin: 12px 0;
+        margin-bottom: 8px;
     }
 
     input[type="checkbox"] {
-      transform: scale(1.5);
-      margin-right: 12px;
-      cursor: pointer;
-      accent-color: #5a4632;
-    }
-
-    li.checked {
-      text-decoration: line-through;
-      color: #8a8a8a;
+        margin-right: 8px;
     }
 
     .warning {
-      margin-top: 15px;
-      font-weight: bold;
-      color: #c0392b;
-      text-align: center;
-      font-size: 1.1em;
+        color: darkred;
+        font-weight: bold;
+        margin-top: 20px;
     }
 
-    #finalMessage {
-      display: none;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-top: 20px;
-      opacity: 0;
-      transition: opacity 0.8s ease-in;
+    .hidden-message {
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        border: 2px dashed #444;
+        background: #fdf6e3;
+        animation: fadeIn 1.2s ease-in-out forwards;
     }
 
-    #finalMessage.show {
-      display: block;
-      opacity: 1;
+    .hidden-message a {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #003366;
     }
 
-    #finalMessage a {
-      color: #c0392b;
-      text-decoration: underline;
-      font-weight: bold;
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
-
-    @media screen and (max-width: 600px) {
-      h1 { font-size: 1.6em; }
-      h2 { font-size: 1.2em; }
-      li { font-size: 1.05em; }
-      input[type="checkbox"] { transform: scale(1.3); }
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <h1>🧭 Préparatifs pour l’expédition</h1>
+<div class="parchemin">
 
-  <div class="parchment intro">
-    <strong>Bravo d’être arrivée jusque-là.</strong><br>
-    Désolé si certaines étapes ont été un peu difficiles, mais je ne voulais pas que quelqu’un d’autre tombe dessus.<br>
-    Je savais que vous, vous pourriez le faire.<br><br>
-    Mais ce n’est que le début…<br>
-    Prenez avec vous les éléments de la liste, et rendez-vous dans la voiture.
-  </div>
+<h1>🧭 Préparatifs pour l’expédition</h1>
 
-  <h2>👕 Vêtements</h2>
-  <ul>
-    <li><input type="checkbox"> Affaires chaudes pour le soir</li>
-    <li><input type="checkbox"> Sous-vêtements de rechange</li>
-    <li><input type="checkbox"> Pyjama</li>
-    <li><input type="checkbox"> Birk ou claquettes</li>
-  </ul>
+<p>
+Bravo d’être arrivés jusque-là. Certaines étapes ont pu être exigeantes, mais elles étaient nécessaires.
+Ce n’est que le début. Prenez les éléments de la liste ci-dessous avec vous, puis rendez-vous dans la voiture.
+</p>
 
-  <h2>🧴 Toilettes</h2>
-  <ul>
-    <li><input type="checkbox"> Brosse à dents + dentifrice</li>
-    <li><input type="checkbox"> Savon</li>
-    <li><input type="checkbox"> Crème solaire</li>
-    <li><input type="checkbox"> Kit de secours</li>
-    <li><input type="checkbox"> Anti-moustique</li>
-  </ul>
+<h2>👕 Vêtements</h2>
+<ul>
+    <li><input type="checkbox" class="check"> Affaires chaudes pour le soir</li>
+    <li><input type="checkbox" class="check"> Sous-vêtements de rechange</li>
+    <li><input type="checkbox" class="check"> Pyjama</li>
+    <li><input type="checkbox" class="check"> Birkenstock / claquettes</li>
+</ul>
 
-  <h2>🎒 Divers</h2>
-  <ul>
-    <li><input type="checkbox"> Eau + Encas</li>
-    <li><input type="checkbox"> Machette</li>
-    <li><input type="checkbox"> Frontale</li>
-    <li><input type="checkbox"> Batterie externe</li>
-    <li><input type="checkbox"> Lunettes de soleil</li>
-    <li><input type="checkbox"> Casquette</li>
-    <li><input type="checkbox"> Jeux de société / Livre</li>
-    <li><input type="checkbox"> Boussole</li>
-  </ul>
+<h2>🧴 Toilette</h2>
+<ul>
+    <li><input type="checkbox" class="check"> Brosse à dents + dentifrice</li>
+    <li><input type="checkbox" class="check"> Savon</li>
+    <li><input type="checkbox" class="check"> Crème solaire</li>
+    <li><input type="checkbox" class="check"> Kit de secours</li>
+    <li><input type="checkbox" class="check"> Anti-moustique</li>
+</ul>
 
-  <!-- Message secret / coordonnées Google Maps juste à la fin de la liste -->
-  <div id="finalMessage" class="parchment">
-    <a href="https://www.google.com/maps/search/?api=1&query=-21.236265,55.500124" target="_blank">
-      -21.236265, 55.500124
-    </a>
-  </div>
+<h2>🎒 Divers</h2>
+<ul>
+    <li><input type="checkbox" class="check"> Eau + Encas</li>
+    <li><input type="checkbox" class="check"> Machette</li>
+    <li><input type="checkbox" class="check"> Lampe frontale</li>
+    <li><input type="checkbox" class="check"> Batterie externe</li>
+    <li><input type="checkbox" class="check"> Lunettes de soleil</li>
+    <li><input type="checkbox" class="check"> Casquette</li>
+    <li><input type="checkbox" class="check"> Jeux de société / Livre</li>
+    <li><input type="checkbox" class="check"> Boussole</li>
+</ul>
 
-  <!-- Phrase finale / conseils sérieux -->
-  <div class="parchment intro">
-    Avant de partir, équipez-vous d’une tenue de randonnée confortable et de bonnes chaussures adaptées.<br>
-    N’emportez que l’essentiel pour passer une nuit dans la jungle si nécessaire.<br>
-    Pour le matelas et la couverture, je vous montrerai comment improviser avec du bois et des feuilles.
-  </div>
+<div id="secret" class="hidden-message">
+    <p>
+        📍
+        <a href="https://www.google.com/maps?q=-21.236265,55.500124" target="_blank">
+            -21.236265, 55.500124
+        </a>
+    </p>
+    <p>
+        Une fois sur place, ouvrez l’enveloppe qui se trouve dans la boîte à gants.
+    </p>
+</div>
 
-  <!-- Avertissement permanent -->
-  <div class="warning">
-    ⚠️ N’OUBLIEZ RIEN OU VOUS NE POURREZ PAS CONTINUER
-  </div>
+<p>
+Avant de partir, équipez-vous d’une tenue de randonnée adaptée et de bonnes chaussures.
+Si vous jugez nécessaire d’emporter autre chose d’indispensable pour passer une nuit en milieu naturel,
+faites-le avec discernement. Évitez toutefois de trop vous encombrer.
+Pour le matelas et la couverture, je vous montrerai comment faire avec du bois et des feuilles.
+</p>
 
-  <script>
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    const finalMessage = document.getElementById('finalMessage');
+<p class="warning">
+⚠️ N’OUBLIEZ RIEN OU VOUS NE POURREZ PAS CONTINUER ⚠️
+</p>
 
-    function checkAllChecked() {
-      // Vérifie si toutes les cases sont cochées
-      const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+</div>
 
-      // Barrer les items cochés
-      checkboxes.forEach(cb => {
-        cb.parentElement.classList.toggle('checked', cb.checked);
-      });
+<script>
+const checkboxes = document.querySelectorAll('.check');
+const secret = document.getElementById('secret');
 
-      // Affiche ou cache le message secret avec fade-in
-      if (allChecked) {
-        finalMessage.classList.add('show');
-      } else {
-        finalMessage.classList.remove('show');
-      }
-    }
-
-    // Écouteur sur toutes les cases
-    checkboxes.forEach(cb => cb.addEventListener('change', checkAllChecked));
-
-    // Vérification au chargement de la page
-    window.addEventListener('DOMContentLoaded', checkAllChecked);
-  </script>
+checkboxes.forEach(box => {
+    box.addEventListener('change', () => {
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        if (allChecked) {
+            secret.style.display = 'block';
+        }
+    });
+});
+</script>
 
 </body>
 </html>
